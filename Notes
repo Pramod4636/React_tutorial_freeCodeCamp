@@ -11,13 +11,13 @@ SETUP
 - to run project dependance requird to install in that repository . 
 - global install => any repo use able     -g at end 
 =================================================================================================================================
-+++++ SETUP tools 
++++++ SETUP tools   ( create react app ) 
 - Create React APP : all depencies install in one shoot
                      command line tool for quickly set up new react project 
                      creates an environment where easily buil and see website for react 
      syntax        : npx create-react-app <folderName>     (where to install dependances )
 - Babel            :  javascript comiler  |  latest js syntax and feature works without worring about browser compatibility . 
-- Run React project : 
+*- Run React project : 
    step 1 -> go to parent repos of project repository   
           npx create-react-app <folderName_project>
    step 2 -> go inside the project repository 
@@ -25,15 +25,48 @@ SETUP
    step 3 -> react app will be creastd on localhost:3000 
 - Structure of files : 
    - nodemodules folder : installed dependecs 
-   - public   folder    : html  (root div madhey entire js code is running .  
+   - public   folder    : folder contains static assets and the HTML template used as the base for your React application.
+         index.html : where  js code is running . [ react component engict in 
+   - build  folder      :  It contains the production-ready version of your React application
+      npm run build  commoand run
+    *- src folder : 
+           app.js     =>  where all react commonent are making . 
+           index.js   => js component is making and enjecting in index.html of puclic  
+   - pakage-json   : contains all dependance used to run react application .
 =================================================================================================================================
-+++++
-
++++++ Creating component : 
+ - index.js in src folder : 
+       1) import React from 'react'                    
+       2) import ReactDom from 'react-dom'    ( required to inject react component into html pages index.html in public) 
+       3) create compnent -> function with firt latter is capital 
+       4) inject in index.html :   
+            ReactDom.render( what component , where to inject ) 
+            ReactDom.render( <FunctionName/> , document.getElementById('root') );
+ - returning component : 
+     1way : html code     e.g return <h4> hellow world </h4>     
+     2way : React.createElement('tagName',{},'continant');  e.g React.createElement('h4',{} , 'hellow world');
+     3way :  return  (  HTML element ) ;    angular brakets 
+     return single element only : 
+           if 2 element then :  1) put into <React.fragment> </React.fragment>  2) put into <div> </div>  semantics  maintian <article></article>  
+           
 =================================================================================================================================
-+++++
-
++++++ JSX rules : javaScript XML compoennts are writeen in this syntax 
+- return single element always    if more => div put ,  <React.Fragment> </React.Fragment> 
+- semantic use  :  nested in meaningful 
+- use camelCase for Html attribute   e.g  onclick   is  Used as  onClick 
+- <div class ="">     use   <div className = "" >    ( attribute are different )  
+- close every element   : single elemtn in html  <img>    react => <img src =""   /> 
+- formating  : use  return ();  
 =================================================================================================================================
-+++++
++++++ Nesting componets : 
+- component                   : function with first latter upper 
+- store component in varialbe : const  compName = () => {   return (); }
+- we can add stored component in HTML element .
+- MUST USE <compoenetName/>  clossing after name 
+-   <div>
+        <compoennt1/> 
+        <component2/>
+    </div> 
 
 =================================================================================================================================
 +++++

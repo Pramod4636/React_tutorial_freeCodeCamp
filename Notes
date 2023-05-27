@@ -1,12 +1,31 @@
 +++++ React : Js libary for user interface 
+=================================================================================================================================
+SETUP 
 - command Terminal : pwd  ls  mkdir  cd  cd ..  clear
 - package.json     => dependancies required for the running React application run correctly .
 - install dependecis => npm install ( package.json all dependance (pakages))
 - npm  => (node pakage manger) for  js and node.js application required 
 - anything installed in using npm Their dependencies is created in pakage-j.son
+- npm install <pakage name>  option 
+   options :  
+- to run project dependance requird to install in that repository . 
+- global install => any repo use able     -g at end 
 =================================================================================================================================
-+++++
-
++++++ SETUP tools 
+- Create React APP : all depencies install in one shoot
+                     command line tool for quickly set up new react project 
+                     creates an environment where easily buil and see website for react 
+     syntax        : npx create-react-app <folderName>     (where to install dependances )
+- Babel            :  javascript comiler  |  latest js syntax and feature works without worring about browser compatibility . 
+- Run React project : 
+   step 1 -> go to parent repos of project repository   
+          npx create-react-app <folderName_project>
+   step 2 -> go inside the project repository 
+          npm start 
+   step 3 -> react app will be creastd on localhost:3000 
+- Structure of files : 
+   - nodemodules folder : installed dependecs 
+   - public   folder    : html  (root div madhey entire js code is running .  
 =================================================================================================================================
 +++++
 

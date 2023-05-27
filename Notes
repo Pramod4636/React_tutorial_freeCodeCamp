@@ -69,10 +69,25 @@ SETUP
     </div> 
 
 =================================================================================================================================
-+++++
++++++ how to design the Using CSS file 
+- import css in index.js :  import './index.css' ( location provide where iis it css file )
+- className =""       give to Returning HTML element of component . 
+- select and Desing
+Disadvantage :  name collision possible 
+solution     : JS Css 
 
+++++ Desing the Component Inline in index.js : 
+function Component()
+{
+      <section  style = {{ attribute : 'value' , color : 'red' , margin : '30px'}}
+      >
+      </section> 
+}
+Value writing JSX rule follow Captlizing :  fontsize   insted of do this  fontSize 
 =================================================================================================================================
-+++++
++++++ Component Use : 
+as many as use . 
+modify all by just modifying the component . ( replicate every other ) 
 
 =================================================================================================================================
 

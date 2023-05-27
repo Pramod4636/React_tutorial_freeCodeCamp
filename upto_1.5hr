@@ -1,0 +1,25 @@
+import React from 'react'
+import ReactDom from 'react-dom' 
+  
+function Greating(){
+  return <h4> This is pramod and this is my first component  </h4>
+  // return React.createElement('h1',{},'hellow world');
+}
+
+
+ReactDom.render(<Greating/>,document.getElementById('root'));
+
+function Greating2()
+{
+    return ( 
+    <div> 
+      <h3> hello People</h3>
+      <ul>
+        <li> <a href="#"> Hellow wolrd</a></li>
+      </ul>
+    </div>
+
+    );
+}
+
+ReactDom.render(<Greating2/>,document.getElementById('root'));

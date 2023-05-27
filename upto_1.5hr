@@ -23,3 +23,27 @@ function Greating2()
 }
 
 ReactDom.render(<Greating2/>,document.getElementById('root'));
+
+===============================================================================================
+Nesting elemnt : 
+import React from 'react'
+import ReactDom from 'react-dom' 
+  
+function Greating(){
+  return ( <div> <Person/> 
+  <Message/>
+  </div>
+  );
+}
+
+const Person = () =>{
+  return (<h2>Prmaod dhaygude</h2>);
+}
+
+const Message = ()=>{
+  return (<p>This is my message </p>);
+}
+
+ReactDom.render(<Greating/>,document.getElementById('root'));
+===============================================================================================
+

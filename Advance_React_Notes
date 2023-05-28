@@ -4,4 +4,92 @@ useState , useEffect ,Conditional Rendering , Forms , useRef , useReducer , Prop
 IMPORTNT : useState and useEffect 
 Renderingv : en·​der ˈren-dər. : to transmit to another : deliver. : to furnish for consideration, approval, o
 
-==========================================================================================
+==========================================================================================p
+problem faced during setup : 
+1) C:digital envelope routines::unsupported   this error came 
+ solved : 
+    reinstalled depencdecies 
+    Updatae dependencies to fix it : npm audit fix
+===============================================================================================
++++++ different requirement are provided in 12 tutorial basic sethup 
+we have want to more focus on Functionality 
+===============================================================================================
++++++ index.js component rount into root div of public index.html file
+index.js  inside  : app.js  app copmonent is redered  
+
+we are writing in app.js . 
+===============================================================================================
++++++ how to work : 
+1) to see which component is learning and final component both are provided 
+   app.js : import working component  setup and final componetn
+             add into JSX ( html returning )
+2) go to setup copment try  learning . 
+===============================================================================================
+#############################################################################################################################################
++++++ UseState Learning : 
+
+- Render :  refers to the process of generating and displaying the user interface (UI) based on the 
+  current state and props of a component.
+  It involves translating JSX code into HTML elements, creating DOM nodes, applying styles, and attaching event listeners. 
+  The rendered output is what the user sees and interacts with on the page
+  
+- Re-renders : 
+  Re-renders occur when a component evaluates its JSX code again to generate a new output.
+  It results in the generation of updated UI based on changes in state or prop values.
+  The component re-evaluates its JSX code, potentially updating the values of variables.
+  Styles may be recalculated to reflect any changes in the component's state or prop values.
+  The updated UI is displayed to the user, reflecting the changes made in the component.
+
+- The useState hook in React is used to add state management to functional components
+  It allows you to declare state variables, update them, and trigger component  re-renders when the state changes. 
+  It's a powerful tool for managing dynamic data and building interactive UIs in React.
+
+- useState is function which takes 2 values 
+    valu1 -> variable  var1 
+    value2 -> setVariable funcitonName  by which we want to change the value of var1 
+Rules to use : 
+ 1) use 
+ 2) component name must be uppercase 
+ 3) must be in function/coponent body 
+ 4) cannot call conditionaly . 
+
+1) 1-errorExample : 
+     direct change ( assingment of new values by function ) 
+     variable values are changes but change is not seen on Web page 
+     To fix it usestate is used . 
+2)  How to do ; 
+    step1 -> import { useState } from 'react'
+    step2 -> array destructor 
+    [ variableName , FuncitonName] = useState(initialValue of variable )
+    step3 -> whenere requried to update the value 
+    FunctionName(newValue) ;   
+    it will update 
+ 3) useState of Array : 
+    delete element from array click remove btn 
+    one compoent having printing all names in people array make  
+    (inside componente return JSX madhey  arrray.map( ele =>{ write funtion that create copmoent of one array elemlement } );
+    before return add function removeelement 
+    
+    create usestate of peopel variable and setPeople funciton 
+    when remove elemnt : new array from filter 
+    update new array useing setPeople 
+    
+    button for all array element 
+  4) useState for object update :
+     object create inside component 
+     *** Note : event calling always use  { () => functionName() }
+     updata time objact spread first required 
+     obj = { p1 : v1 , p2 : v2 } 
+     update p2 
+     const [obj,setObj = useState( { p1 : v1 , p2 : v2 } ) ; 
+     setObj(...obj,p2 : v3 ) 
+  5) 
+     
+ 
+ 
+===============================================================================================
++++++
+
+
+
+

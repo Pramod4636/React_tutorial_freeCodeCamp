@@ -165,20 +165,57 @@ passing object to compoent by sreding :
 < Book  {...book} />     ( book is object that contina author ,title,img ) 
 
 passing object to compoent by sreding : 
-< Book  key = id  {...book} />     ( book is object that contina author ,title,img ) 
+< Book  key = {book.id}  {...book} />     ( book is object that contina author ,title,img ) 
+
+Note : inside the  compoentn for writing js  use {} brakets . 
 
 GIve unique id to each object to track which one deleted and added . 
 
 
 =============================================================================================
-+++++
-
-
-
++++++ Adding event onClick and mouseOver in react : 
+1) inline event adding : 
+    componente return inside  JSX : 
+        <button type="button"  onClick = { ()=>{ funciton body }}
+2) extranal event addint : 
+     1) In component above return : 
+          create function that execute on event 
+          const functionName = ()=> {} 
+     2) attach function   
+                <button type="button"  onClick = { functionName }}
+2) extranal event adding complex: 
+     1) In component above return : 
+          create function that execute on event 
+          const functionName = (var)=> { use of var } 
+     2) attach function   
+                <button type="button"  onClick = { functionName(var) }}
+     NOte: all time function is run 
+     To avoid :  <button type="button"  onClick = { () => functionName(var) }}
+     
+     usefule information passing e object passing event rellted important information .
+            const functionName = (e)=> { use of var } 
+            
 =============================================================================================
-+++++
-
-
++++++ import and export 
+- store in another file  and use in another file 
+- data varialbe  :  brakets are used when import 
+    store : export   
+        books.js  :  export const book =[];  
+    use    :import 
+        import {books} from 'path '
+        e.g1           impmort {books} from './books.js'     ./ => current folder .
+        e.g2           impmort {books} from './folderName/books.js'      inside folder 
+        
+- component :  different syntax : 
+    
+    store : export 
+       Book.js   :   import React from 'react'
+                     const Book = () =>{}
+                     export default Book 
+    Use  : import 
+         import Book from './Book.js'
+         
+    
 
 =============================================================================================
 +++++

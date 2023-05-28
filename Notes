@@ -51,6 +51,7 @@ SETUP
            
 =================================================================================================================================
 +++++ JSX rules : javaScript XML compoennts are writeen in this syntax 
+- JSX : return HTML element   karto tyatla  HTML element means JSX . 
 - return single element always    if more => div put ,  <React.Fragment> </React.Fragment> 
 - semantic use  :  nested in meaningful 
 - use camelCase for Html attribute   e.g  onclick   is  Used as  onClick 
@@ -90,4 +91,97 @@ as many as use .
 modify all by just modifying the component . ( replicate every other ) 
 
 =================================================================================================================================
++++ Amazon best seelling book : 
+banvla . 
+
+=============================================================================================
++++++ JS inside JSX  (i.e return HTML element) 
+- to include js :   { expression }   // expression that return some vairiable    {title} or {title.UpperCase()} or {4+5} 
+       e.g <h1> {title.uppercase()} </h1> 
+- Global varible usable in all JSX use : 
+    <h1> {var} </h1> 
+- object passing to Component ( function with parameter and 1st latter capital ) 
+   defining component :   const cmpName  = (props ) => { return (use props object prperties);} 
+   nested use of compoent  :    < cmpName  para1=value1 para2=value2> 
+   Object props contian  2 entired  para1 = value1   and para2 = value2 
+ 
+ -another way to define :  const cmpName = ({para1,para2}) { }
+                     already unpaked data is taken  
+             e.g : const  Book = ({img,title,author})=>{
+                       return (
+                         <section className ="book">
+                           <img src={img}></img>
+                           <h1>{ title}</h1>
+                           <h4 style={{color:'#617d98',fontSize :'0.75rem',marginTop:'0.25rem'}}> {author} </h4>
+                         </section> 
+
+                       );
+                     }
+- parameter whose are passed at time of use of component that only have values assinged on train .
+
+=============================================================================================
++++++ Calling component as nestedcomponent  : 
+< book  para1 = value1  para2 =value2  para5 = value5  />
+========================================================= ====================================
++++++ Children of compoenent 
+children     :   <Book  para1 = val1  para3 = val3> <p> <p> </Book> 
+               here p is children because p is inside the coponent
+               that is passed in object pros as children 
+use component 
+              then we can place children anywhere using JS 
+              css that component apply easily
+              book p { css desing } 
+At component :  const Book = (pros) => { 
+                 return (  {pros.children;});
+                } 
+=============================================================================================
++++++ Display array using component : 
+- directly accing array in component  if string then print entire array  
+         if object   cannot be render and erorr 
+- newComponent  function mapping use karne  by passing array 
+  newComponent = arrayName.map( (name) => {  return <h1> name <h1>  });  names display one by one .
+- function mapping is used 
+- other copmonet add this newComponent .  
+=============================================================================================
++++++ Passing array to component : 
+aim : Booklist  component that contain  n books 
+we done : boolist comonent { Booksubcomponent form }
+array objects booksubmocont display  then properties passed 
+
+const Booklist = () =>{
+  return (  arrayName.map( (book)=> {  return ( <Book book = {book} />)}      ); 
+}
+
+
+passing object to component : 
+< Book  book = {book} />    book is object passsed 
+const Book = (props) => 
+{
+    { author , title ,img } = props.book   ( unpaking )  
+}
+
+
+passing object to compoent by sreding : 
+< Book  {...book} />     ( book is object that contina author ,title,img ) 
+
+passing object to compoent by sreding : 
+< Book  key = id  {...book} />     ( book is object that contina author ,title,img ) 
+
+GIve unique id to each object to track which one deleted and added . 
+
+
+=============================================================================================
++++++
+
+
+
+=============================================================================================
++++++
+
+
+
+=============================================================================================
++++++
+
+
 

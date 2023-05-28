@@ -218,7 +218,9 @@ GIve unique id to each object to track which one deleted and added .
     
 
 =============================================================================================
-+++++
-
-
++++++ Deploying website :  Remaning to Perform . ( time constrain mule avoid karto ) . 
+- Netlify free account open 
+- npm run build  command run on project directly 
+- build folder drag and drop on netlify  ( website is hosted ) . 
+=============================================================================================
 

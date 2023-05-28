@@ -211,11 +211,11 @@ GIve unique id to each object to track which one deleted and added .
     store : export 
        Book.js   :   import React from 'react'
                      const Book = () =>{}
-                     export default Book 
+                     export default Book   
     Use  : import 
          import Book from './Book.js'
          
-    
+    due to default : with anyName we can import   ( import Booksabc from './Book.js' ) is also allowed . 
 
 =============================================================================================
 +++++ Deploying website :  Remaning to Perform . ( time constrain mule avoid karto ) . 

@@ -83,7 +83,25 @@ Rules to use :
      update p2 
      const [obj,setObj = useState( { p1 : v1 , p2 : v2 } ) ; 
      setObj(...obj,p2 : v3 ) 
-  5) 
+  5) useState for numric value : 
+     varial creatt 
+     compoent madhey update variable 
+     
+     $$$$$$$$$ IMP : 
+     Complex update : any updation using useState function 
+     timeout set used for value updation then pass direct value is give not desired output 
+     3 click than 1 number is updated 
+     because 3 times calling paramter is take old value 
+     e.g // setTimeout(()=>{setComplexvalue(complexvalue+1);}, 2000);
+     Solution : use function passs inside the setvalue function 
+      setTimeout(   
+    ()=>{ setComplexvalue( (complexvalue) => { return (complexvalue+1);})}
+    , 2000)
+     }
+     here previously updated value is taken so updation correclty 
+     we any string ,array , ojbect timeout updation is same above. 
+     
+     
      
  
  

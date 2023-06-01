@@ -187,7 +187,120 @@ setPerson({...person,[e.target.name] : e.target.value }) daylnamic assingment
 onsubmit one funciton to add the ele in list 
 
 ====================================================================================
-
+UseRef : preserve value  
+   does not trigger re-render  ( input box value maintain wihtout re-render 
+   target DOM nodes / elements  ( point to the target dom element ) 
+====================================================================================
+useReducer : 
+- useful for have different actions that need to update multiple variables in a component.
+- used for structure the complex application  ( like different action and have to set the varaible value of cmpenet ) 
+- instead of directly updating values  ( values are updated thorugh reducer 
+- wherener requre to change the values varialbe of component   
+  we give distpatch instruction (string ) this is happend 
+  based on what happend it changes the values of setuse varibles . 
+- syntax : 
+   const [state,dispath] = useReducer(reducer,deafualtstae) ; // create useRedecur
+   para1 Reducer ; 
+   reducer is function  i/p : state ( object that contian : old values variable )  and  action ( what is happpend string) 
+   based on action paased to reduces ( variable are asssinged to new values and return state ) 
+   returning state is must required 
+   
+   para2 Defaultstate : 
+   function that initalize the variable values 
+   
+   then values are changed according to distpatch what msg is passed 
+   
+   
+   calling useReducer : 
+       dispatch({type : "action" ,payload : person.id });
+       values are updated accorin to reducer msg paased . 
+=========================================================================================
+propDrilling : way to passing data or function form component to its grandchild , below that compoenet ) by passing top level to bottom level  1 stage passeing 
+parent -> childe   then child -> greadchlde   ( data pass ) 
+application : 
+ parentcompoent 
+ {
+      childcomponent
+                    {
+                       grandchild componenet  : display some data 
+                        then gradchild required data to dispaly 
+                     } 
+ }
+ e.g display the list of persion name and id  
+ parent => entire list of person 
+ child  =>    iterate through list and have  data of one person
+ grandchild => take some data from one person and dispaly it  
+ 
+ <childName  obj = {obj} , functionpass = {functionpass } > how data and function passed 
+ beacue deltion of person requred form parent deltetion but button is placed in grandchild component so delteion from parent fucntion required inside grandchild component . 
+ 
+ Note : this itermdediate node not requre data and funciton  so passing though intermdiate component 
+ is not an efficinet way 
+ SOlution : fix : context API   or  redux 
+ ===============================================================================================
+ ContextApi : ( 3-4 level heriachy of compnent than use  for effienct pas) . 
+ - create tunnel direct connection so that deep child directly acces the parent data and fuction 
+- Syntax structure : 
+   - const MyContext = React.createContext(); reuired to requate outside the provider 
+     create object contianin 2 components  provider and consumer 
+   - provider component madhey   return JSX kartana 
+      < Mycontext.Provider value ={ sharedData1,sharedfunciton1,shared2} > 
+      </Mycontext.Provider>
+   - child component how it wili used : 
+       const data = useContext(Mycontext);   ( object that contained all shared thing ) 
+======================================================================================
+ custum hook : use one function in diffrent coponent 
+ 1 seperate file write funtion: 
+ export const useFetch = function(i/p) return {output} 
+ 
+ whene requred : import useFetch   
+  useFetch(i/p) 
+ 
+ =======================================================================================================
+ ++++ proptype  : 
+ - feature to define and validate the types of props passed to components.
+ - propes ara way to pass data from parent to child component  < comp  obj = {obj} > 
+ passed values are props 
+ - also we can assing default values 
+ import PropTypes from 'prop-types';
+ componentName.propTypes = { 
+   propsName :  reuqired data type propTypes.string.isRequired,} 
+- missing vaues in data fetch handle help 
+  shortcirccuit is also naother way : 
+    img = image && image.url 
+    src  = (img || deafultImage) 
+- 
+=======================================================================================
+ - React ROuter : 
+ - use for define the routes and navigation within your application
+ -BrowserRouter : enable your entire application and enable routing functionality 
+ - route : url match the component is rendered 
+ - link : chilkable link component to create navigation link allow user to move between different routes . 
+   Navbar add ( which is same for all pages ) . 
+syntax : 
+- match the route many than all mathing component is displayed . use exact match 
+- import react router 
+  <Router>
+    <Route path = url >  ( strictly chec add exact keyword )  
+       <comopnent /> 
+    <Route>
+  <Router>
+ 
+ - placeholder routing : dyanmmic routing  instade of url for each blog post 
+               we take varialbe accding ot tha t vailble 
+    varialbe in url add 
+=====================================================================================
+Performace optimization : 
+- reacte is faster  deault 
+- The useCallback and useMemo hooks in React are used to optimize performance by memoizing values and preventing unnecessary re-rendering of components.
+- when in some copmonent we fteching list of array 
+  when varible inside componet is updated  every time all array rerended so many memobery and time is taken . 
+  soluintoi : useMemo       list  React.memo( componetn put )    // every time porps or state changes than only rerender . 
+  if hcanged memo than only rerender 
+  - useCallback  : if function repeted rendering avoid 
+       dependancy array 
+       useCallback(function,dependcy list) if list update then only rerender . 
+   
 
 
 

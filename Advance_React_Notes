@@ -173,3 +173,22 @@ Conditional Redering :
    show vaiable maintain 
    {show && <h3> this is ojbect  </h3>}
     show true then 2nd part run and disply this is object . 
+=================================================================================================
+Forms : controled inputs ( varilbe store of cmopelment ) 
+in React main variable in compleent that update values as input user changes 
+input  +> value = "usetatevairble"  onchage = { (e) => setValue(e.target.value) }
+onsubmit submit type button  => we write function that will add elemnt in list 
+
+all input in storing in object  usestate with initliztion requed values 
+input  < value = varible assigne onChnge = (e)=>fun(e)> 
+update object using usestatefunction with spread opramot
+setPerson({...person,[e.target.name] : e.target.value }) daylnamic assingment 
+
+onsubmit one funciton to add the ele in list 
+
+====================================================================================
+
+
+
+
+

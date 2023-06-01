@@ -106,8 +106,70 @@ Rules to use :
  
  
 ===============================================================================================
-+++++
++++++ UseEffect : 
+- used peform sideeffect in functional component 
+- sideeffect => data fetching , subscription , manually changin DOM . 
+1)  Deafault runder : 
+   syntax : call useEffect( function ) ;   inside the componenet  
+   function will executed every time when redering the component in which it present.  
+- redering => updating the visual output of application . (generating HTML , CSS ,js code ) 
+- usestate value changes then re-redering occured  
+- Note : we cann't write useeffect inside the condition block . 
+   
+   syntax : call  useEffect(function,[var1,var2]);
+   after evertime redering of any of dpendancy variable  function is executed 
+   2nd parmenter => list of dependancy useState variable 
+Note : we can call useefect as many time we want . 
 
+2) cleaup function in useEffect : 
+  why used : 
+  - TO prevent memory leaks, avoid conflicts or unintended behavior, 
+  - memory leaks : every time eventlistner creted it allocate memory for storing the function 
+                 (RAM is allocated if we don't clean then RAM used increase ) 
+                 clean => optimizing memory usages (RAM ) 
+  - the cleanup function is used in useEffect to perform necessary cleanup operations
+  ***- not clearned then  lots of eventlistner is created . memory consumtion increase 
+  what it will do : 
+    - performing necessary cleanup operations before the effect is re-run 
+  inside the useEffect we add the eventlistner then  
+  in return function must to remove the eventlistner . 
+  becuase nextime rendering then at that time eventlistner is added . 
+  
+  *** Syntax :   useEffect(function)  or useEffect(function) 
+   inside the function :  {  return () => { remove the eventlistner }}
+  e.g window size changes then we add event listner using  
 
-
-
+3) Fetching data : whenever useStatFunction() callling inside the useEffect(fucntion,[]) fucntion 
+     make sure 2nd paramenter = []  empty dependcy to avoid infinte loop 
+     useffect -> setUser -> useefect -> setUser->.........
+   
+ **** Fetching the data : 
+     asynchonous function used : function what will run bacgroundly 
+       const getUser  = async ()=>
+  {
+      const responce = await fetch(url)   /// fetch will send GET requrest to specidfie Url and return promise that resolves to servers response 
+      // await will pause the execution   // fetch method used so steram of data ( raw data ) is received 
+      const users = await responce.json(); // parse resopone to json   ( raw data -> js object making) 
+      setUsers(users); 
+      console.log(users);     
+  }
+==================================================================================================
+Conditional Redering : 
+- based on condition  displying selective content    
+  coponent will disply what JSX  is returned     so use condition for returing component 
+  synta : 
+  const componName = () => { 
+     [var,setVar] = useState(0)
+     if(var ) 
+      return <h2> loading </h2>
+     else : 
+      return <h2> multiple User </h2> 
+      
+  }
+2) short Circuit : ||   &&  how will world 
+    part1 &&  part2  : if part1 is true then only part2 will executed     used for conditional rendering 
+    part1 || part2   : if part1 is true then 2nd part will not executed   used for provide default values . 
+3) show and hide : 
+   show vaiable maintain 
+   {show && <h3> this is ojbect  </h3>}
+    show true then 2nd part run and disply this is object . 
